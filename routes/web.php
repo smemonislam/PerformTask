@@ -33,6 +33,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('companies', CompanyController::class)->middleware(['auth', 'verified']);
-    Route::resource('employees', EmployeeController::class)->middleware(['auth', 'verified']);
+    Route::resource('companies', CompanyController::class)->except('show');
+    Route::resource('employees', EmployeeController::class)->except('show');
 });
