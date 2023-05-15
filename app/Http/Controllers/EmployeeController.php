@@ -15,7 +15,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = DB::table('employees as e')
-        ->select('e.id as eid', 'e.company_id', 'e.first_name', 'e.last_name', 'e.email', 'e.phone', 'c.id', 'c.name')
+        ->select('e.id as eid', 'e.company_id', 'e.first_name', 'e.last_name', 'e.email as e_email', 'e.phone', 'c.id', 'c.name')
         ->leftJoin('companies as c', 'c.id', 'e.company_id')
         ->orderBy('e.id', 'DESC')
         ->paginate(10);

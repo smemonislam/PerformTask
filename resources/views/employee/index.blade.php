@@ -52,7 +52,7 @@
                           <td>{{ $loop->iteration }}</td>
                           <td>{{ $data->name }}</td>
                           <td>{{ $data->first_name }} {{ $data->last_name }}</td>
-                          <td>{{ $data->email }}</td>
+                          <td>{{ $data->e_email }}</td>
                           <td>{{ $data->phone }}</td>
                           <td>
                             <form action="{{ route('employees.destroy', $data->eid) }}" method="POST">
